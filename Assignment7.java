@@ -15,13 +15,22 @@ public class Assignment7 {
     }
 
     public static void testUpToNowTotal() {
+        System.out.println("UpToNowTotal Test:");
+        // normal totalList test
         ArrayIntList myArrayIntList = new ArrayIntList(2, 3, 5, 4, 7, 15, 20, 7);
         ArrayIntList totalList = myArrayIntList.upToNowTotal();
         System.out.println(myArrayIntList.toString());
         System.out.println(totalList.toString());
+        // empty list test
+        myArrayIntList = new ArrayIntList();
+        totalList = myArrayIntList.upToNowTotal();
+        System.out.println(myArrayIntList.toString());
+        System.out.println(totalList.toString());
+        System.out.println();
     }
 
     public static void testIsPairSorted() {
+        System.out.println("IsPairSorted Test:");
         // true and odd test
         ArrayIntList myArrayIntList = new ArrayIntList(3, 8, 2, 5, 19, 24, -3, 0, 4, 4, 8, 205, 42);
         System.out.println(myArrayIntList);
@@ -31,11 +40,19 @@ public class Assignment7 {
                 0, 42, 308, 409, 19, 17, 2, 4);
         System.out.println(myArrayIntList);
         System.out.println(myArrayIntList.isPairSorted());
+        // empty list test
+        myArrayIntList = new ArrayIntList();
+        System.out.println(myArrayIntList);
+        System.out.println(myArrayIntList.isPairSorted());
+        System.out.println();
+
     }
 
     public static void testRemoveLast() {
+        System.out.println("RemoveLast Test:");
         ArrayIntList myArrayIntList = new ArrayIntList(8, 17, 9, 24, 42, 3, 8);
         myArrayIntList.removeLast(4);
         System.out.println(myArrayIntList);
+        System.out.println();
     }
 }

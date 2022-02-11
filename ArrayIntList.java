@@ -277,11 +277,14 @@ public class ArrayIntList implements Iterable<Integer> {
         }
     }    
 
-// YOUR CODE GOES HERE
+// MY CODE:
     public ArrayIntList upToNowTotal() {
+        // create new ArrayIntLIst since we can't modify the original
         ArrayIntList totalList = new ArrayIntList(size);
+        // keep variable to keep track of the running total
         int total = 0;
         for (int i  = 0; i < size; ++i) {
+            // make the totalList's items correspond to the running total.
             total += elementData[i];
             totalList.add(total);
         }
@@ -289,7 +292,10 @@ public class ArrayIntList implements Iterable<Integer> {
     }
 
     public boolean isPairSorted() {
+        // we never have to go to the last index because that i is the pointer for a first item in the pairs
+        // if i was pointing at the last item, then it'd mean that there are an odd number of items.
         for (int i = 0; i < size-2; i += 2) {
+            // if at any point a pair isn't sorted, then the ArrauIntList isn't sorted.
             if (elementData[i] > elementData[i+1]) {
                 return false;
             }
@@ -298,6 +304,9 @@ public class ArrayIntList implements Iterable<Integer> {
     }
 
     public void removeLast(int itemsToRemove) {
+        // the size determines the number of items in the ArrayIntList
+        // as long as the size is reduced, the ArrayIntList gets smaller,
+        // even though the "deleted" data is still stored in the elementData.
         for (int i = size; i >= itemsToRemove; --i) {
             --size;
         }
