@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 // Class ArrayIntList can be used to store a list of integers.
 public class ArrayIntList implements Iterable<Integer> {
     private int[] elementData;  // list of integers
@@ -273,5 +278,14 @@ public class ArrayIntList implements Iterable<Integer> {
     }    
 
 // YOUR CODE GOES HERE
+    public ArrayIntList upToNowTotal() {
+        ArrayIntList totalList = new ArrayIntList();
+        int total = 0;
+        for (int i : elementData) {
+            total += i;
+            totalList.add(total);
+        }
+        return totalList;
+    }
 
 }
