@@ -50,6 +50,7 @@ public class Assignment7 {
 
     public static void testRemoveLast() {
         System.out.println("RemoveLast Test:");
+        // normal test
         ArrayIntList myArrayIntList = new ArrayIntList(8, 17, 9, 24, 42, 3, 8);
         myArrayIntList.removeLast(4);
         System.out.println(myArrayIntList);
