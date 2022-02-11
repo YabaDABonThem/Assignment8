@@ -279,13 +279,27 @@ public class ArrayIntList implements Iterable<Integer> {
 
 // YOUR CODE GOES HERE
     public ArrayIntList upToNowTotal() {
-        ArrayIntList totalList = new ArrayIntList();
+        ArrayIntList totalList = new ArrayIntList(size);
         int total = 0;
-        for (int i : elementData) {
-            total += i;
+        for (int i  = 0; i < size; ++i) {
+            total += elementData[i];
             totalList.add(total);
         }
         return totalList;
     }
 
+    public boolean isPairSorted() {
+        for (int i = 0; i < size-2; i += 2) {
+            if (elementData[i] > elementData[i+1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void removeLast(int itemsToRemove) {
+        for (int i = size; i >= itemsToRemove; --i) {
+            --size;
+        }
+    }
 }
